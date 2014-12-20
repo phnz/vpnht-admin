@@ -61,7 +61,7 @@
             "humanName": "Transactions",
             "backboneForms": {
                 "schema": {
-                    "customer_id": { "type": "Text", "title": "Customer ID", "validators": ["required"] },
+                    "customerId": { "type": "Text", "title": "Customer ID", "validators": ["required"] },
                     "billingType": { "type": "Text", "title": "Payment Type", "validators": ["required"] },
                     "plan": { "type": "Text", "title": "Plan", "validators": [] },
                     "data": { "type": "Text", "title": "Log", "validators": [] }
@@ -77,7 +77,7 @@
                 "find": { "customerId": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } },
                 "sort": { "updated": -1 },
                 "limit": 10,
-                "columns": ["customerId","type", "amount"]
+                "columns": ["customerId","billingType", "plan"]
             },
             "mongoose": {
                 "schema": null
