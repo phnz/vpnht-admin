@@ -64,7 +64,7 @@
                     "customerId": { "type": "Text", "title": "Customer ID", "validators": ["required"] },
                     "billingType": { "type": "Text", "title": "Payment Type", "validators": ["required"] },
                     "plan": { "type": "Text", "title": "Plan", "validators": [] },
-                    "data": { "type": "Text", "title": "Log", "validators": [] }
+                    "data": { "type": "TextArea", "title": "Log", "validators": [] }
 
                 }
             },
