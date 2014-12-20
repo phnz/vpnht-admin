@@ -28,6 +28,7 @@
             "backboneForms": {
                 "schema": {
                     "email": { "type": "Text", "title": "Email", "validators": ["required"] },
+                    "username": { "type": "Text", "title": "Username", "validators": ["required"] },
                     "coupon": { "type": "Text", "title": "Coupon", "validators": [] },
                     "billingType": { "type": "Text", "title": "Payment method", "validators": [] }
 
