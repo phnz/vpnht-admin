@@ -55,6 +55,35 @@
             },
             "readonly": false,
             "revisionable": true
+        },
+        {
+            "name": "txns",
+            "humanName": "Transactions",
+            "backboneForms": {
+                "schema": {
+                    "customer_id": { "type": "Text", "title": "Customer ID", "validators": ["required"] },
+                    "type": { "type": "Text", "title": "Payment Type", "validators": ["required"] },
+                    "amount": { "type": "Text", "title": "Amount", "validators": [] },
+                    "data": { "type": "Text", "title": "Log", "validators": [] }
+
+                }
+            },
+            "relations": {
+            },
+            "toStringField": "customerId",
+            "updatedField": { "key": "updated", "type": "Date" },
+            "createdField": { "key": "created", "type": "Date" },
+            "fastSearch": {
+                "find": { "customerId": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } },
+                "sort": { "updated": -1 },
+                "limit": 10,
+                "columns": ["customerId","type", "amount"]
+            },
+            "mongoose": {
+                "schema": null
+            },
+            "readonly": true,
+            "revisionable": false
         }
     ]
 }
