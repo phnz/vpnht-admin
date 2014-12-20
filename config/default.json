@@ -1,0 +1,54 @@
+{
+    "s3": {
+        "bucket": "vpnht"
+    },
+    "project_name": "VPN.ht",
+    "roles": [
+        {
+            "name": "root",
+            "permissions": {
+                "users": "crud"
+            }
+        },
+        {
+            "name": "editor",
+            "permissions": {
+                "users": "cru"
+            }
+        }
+    ],
+    "users": [
+        { "username": "editor", "password": "123", "fullname": "Test User", "roles": ["editor"] },
+        { "username": "david", "password": "123", "fullname": "David", "roles": ["root", "editor"] }
+    ],
+    "collections": [
+        {
+            "name": "users",
+            "humanName": "Users",
+            "backboneForms": {
+                "schema": {
+                    "email": { "type": "Text", "title": "Email", "validators": ["required"] },
+                    "coupon": { "type": "Text", "title": "Coupon", "validators": [] },
+                    "billingType": { "type": "Text", "title": "Payment method", "validators": [] }
+
+                }
+            },
+            "relations": {
+            },
+            "toStringField": "email",
+            "updatedField": { "key": "updated", "type": "Date" },
+            "createdField": { "key": "created", "type": "Date" },
+            "fastSearch": {
+                "find": { "email": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } },
+                "sort": { "updated": -1 },
+                "limit": 10,
+                "columns": ["email"]
+            },
+            "mongoose": {
+                "schema": null
+            },
+            "readonly": false,
+            "revisionable": true
+        }
+    ]
+}
