@@ -62,8 +62,8 @@
             "backboneForms": {
                 "schema": {
                     "customer_id": { "type": "Text", "title": "Customer ID", "validators": ["required"] },
-                    "type": { "type": "Text", "title": "Payment Type", "validators": ["required"] },
-                    "amount": { "type": "Text", "title": "Amount", "validators": [] },
+                    "billingType": { "type": "Text", "title": "Payment Type", "validators": ["required"] },
+                    "plan": { "type": "Text", "title": "Plan", "validators": [] },
                     "data": { "type": "Text", "title": "Log", "validators": [] }
 
                 }
@@ -83,7 +83,7 @@
                 "schema": null
             },
             "readonly": false,
-            "revisionable": false
+            "revisionable": true
         }
     ]
 }
