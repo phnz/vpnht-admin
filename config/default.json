@@ -82,7 +82,7 @@
             "mongoose": {
                 "schema": null
             },
-            "readonly": true,
+            "readonly": false,
             "revisionable": false
         }
     ]
