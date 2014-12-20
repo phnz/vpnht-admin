@@ -40,10 +40,15 @@
             "updatedField": { "key": "updated", "type": "Date" },
             "createdField": { "key": "created", "type": "Date" },
             "fastSearch": {
-                "find": { "email": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } },
+                "find": {
+                    "$or": [
+                        { "username": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } },
+                        { "email": { "__constructor": "RegExp", "__arguments": ["(^|\\W*)${q}", "ig"] } }
+                    ]
+                },
                 "sort": { "updated": -1 },
                 "limit": 10,
-                "columns": ["email"]
+                "columns": ["email","username"]
             },
             "mongoose": {
                 "schema": null
