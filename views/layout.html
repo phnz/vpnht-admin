@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= global.config.project_name||'Mongorilla' %><%= title ? ' | ' + title : '' %></title>
+        <title>Secret Area</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
@@ -201,28 +201,6 @@
         <% if (sessionUser) { %>
         </div>
         <% } %>
-
-        <footer class="m-footer clearfix" role="contentinfo">
-            <div class="container">
-                <% if (!sessionUser) { %>
-                <div class="m-social">
-                    <ul class="m-social-buttons">
-                        <li>
-                            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=gerardobort&amp;repo=mongorilla&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
-                        </li>
-                        <li>
-                            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=gerardobort&amp;repo=mongorilla&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
-                        </li>
-                    </ul>
-                </div>
-                <% } %>
-
-                <p>
-                    Created by <a href="http://twitter.com/gerardobort" target="_blank">@gerardobort</a>.
-                    Code licensed under <a href="https://github.com/gerardobort/mongorilla/blob/master/LICENSE" target="_blank">MIT</a>.
-                </p>
-            </div>
-        </footer>
 
         <script src="/third-party/requirejs/require.js" data-main="/init<%= frontendBuilt ? '-build.js' : '' %>" ></script>
 
